@@ -1,14 +1,7 @@
 $(document).ready(function() {
 	var dynamic = new DynamicList();
 	
-	
-	var id = 0;
-	var action = "add";
-	
-	
-	
 });
-
 
 function DynamicList() {
 	var self = this;
@@ -31,8 +24,7 @@ function DynamicList() {
 			return this.total;
 		}
 	};
-	
-	
+
 	var actions = {
 		idSelected: 0,
 		
@@ -45,7 +37,6 @@ function DynamicList() {
 		get actions() {
 			return this.action;
 		}
-	
 	}
 	
 	/**
@@ -65,13 +56,11 @@ function DynamicList() {
 	/**
 	 * vars
 	 */
-	
 	this.edit = edit;
 	
 	actions = "add";
 	
 	this.add = function() {
-		//this.addItem();
 		items.addItem()
 		
 		$("#dynamicList ul")
@@ -104,7 +93,6 @@ function DynamicList() {
 		this.edit.val("");
 	}
 	
-	
 	this.edit.keypress( function( event ) {
 		if ( event.which == 13 ) {
 			
@@ -130,14 +118,10 @@ function DynamicList() {
 	this.editListener.on('click', "#dynamicList ul li button.edit" , function() {
 		idSelected = $(this).parent().data("id");
 		
-		console.log("----------------------");
-		console.log(idSelected);
-		console.log("----------------------");
 		$("#dynamicList #editList").val( $(this).parent().find("span").text() );
 		actions="edit";
 		
 		return false;
 	});
-	
 	
 }
